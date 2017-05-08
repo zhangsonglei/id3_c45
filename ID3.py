@@ -6,8 +6,9 @@ from math import log
 def loadData(path):
     fr = open(path)
     lense = [example.strip().split("\t") for example in fr.readlines()]
-    features = ["age", "typeOfLense", "astigmatic", "tearRate"]
-    return lense, features
+    features = lense[0][0:-1]
+    lenses = lense[1:]
+    return lenses, features
 
 # calc the parameter of dataset.
 def getDataSetEnt(dataSet):
