@@ -2,37 +2,13 @@ from treePlotter import *
 import operator
 from math import log
 
-
-# the example of dataSet.the return has its label.
-def loadTestDataSet():
-    dataSet = [[1, 1, 'yes'],
-               [1, 1, 'yes'],
-               [1, 0, 'no'],
-               [0, 1, 'no'],
-               [0, 1, 'no']]
-    labels = ['no surfacing', 'flippers']
-    # change to discrete values
-    return dataSet, labels
-
-
-def loadTestData():
-    fr = open("test.txt")
-    testData = [example.strip().split("\t") for example in fr.readlines()]
-    data = [];
-    classes = []
-    for d in testData:
-        data.append(d[:-1])
-        classes.append(d[-1])
-    return data, classes
-
-
 # load data about lense.
 def loadData(path):
     fr = open(path)
     lense = [example.strip().split("\t") for example in fr.readlines()]
-    features = ["age", "typeOfLense", "astigmatic", "tearRate"]
-    return lense, features
-
+    features = lense[0][0:-1]
+    lenses = lense[1:]
+    return lenses, features
 
 # calc the parameter of dataset.
 def getDataSetEnt(dataSet):
