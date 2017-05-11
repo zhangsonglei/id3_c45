@@ -31,7 +31,8 @@ class App(object):
         self.lines = self.fr.readlines()
         self.text1.delete(0.0,END)
         for line in self.lines:
-            self.text1.insert(END,line)
+            if line != '\n'
+                self.text1.insert(END,line)
         self.fr.close()
 
     def train_id3_model(self):
