@@ -31,7 +31,7 @@ class App(object):
         self.lines = self.fr.readlines()
         self.text1.delete(0.0,END)
         for line in self.lines:
-            if line != '\n'
+            if line != '\n'：
                 self.text1.insert(END,line)
         self.fr.close()
 
