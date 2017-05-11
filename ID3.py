@@ -6,6 +6,8 @@ from math import log
 def loadData(path):
     fr = open(path)
     lense = [example.strip().split("\t") for example in fr.readlines()]
+    while [''] in lense:
+        lense.remove([''])
     features = lense[0][0:-1]
     lenses = lense[1:]
     return lenses, features
